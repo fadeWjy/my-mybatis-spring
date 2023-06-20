@@ -1,0 +1,7 @@
+# my-mybatis-spring
+自定义spring整合mybatis底层源码实现
+官方文档：mybatis-spring.jarmybatis-spring 
+
+我们在spring中使用mybatis时，除了依赖mybatis.jar通常还需要依赖mybatis-spring.jar,这个包起到连接spring和mybatis的作用，也就是Spring整合Mybatis的做。
+
+我们说的整合整合，无非就是把插件的一些bean注册到spring容器中。在自己项目开发中要使用时依赖注入使用插件的的bean，对于mybatis我们要用的不就是mapper对于的bean吗，而mapper接口对应的实现类是mybatis通过JDK动态代理生成的，动态代理类逻辑肯定是执行mapper接口上的注解的sql或mapper.xml对应的sql。所有说整合其实就是生成所有mapper接口的动态代理对象注册到spring容器中就完事了。
